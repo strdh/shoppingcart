@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="content">
-        <a class="btn btn-primary" data-bs-toggle="modal" href="#cartModal" role="button">Cart</a>
-        <a class="btn btn-danger">Reset</a>
+        <a class="btn btn-primary" data-bs-toggle="modal" href="#cartModal" role="button" id="btnCart">Cart</a>
+        <a class="btn btn-danger" id="btnReset">Reset</a>
         <br><br>
         <div class="row">
             
@@ -25,10 +25,22 @@
                     <h5 class="modal-title">Cart</h5>
                 </div>
                 <div class="modal-body">
-                    Show a second modal and hide this one with the button below.
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Qty</td>
+                                <td>Price</td>
+                                <td>Total</td>
+                            </tr>
+                        </thead>
+                        <tbody id="cart">
+                            
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger"  data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -39,3 +51,4 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 </html>
+

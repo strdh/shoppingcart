@@ -37,22 +37,60 @@ menus.forEach(val => {
                 </div>`
     allitem += item
 })
-
 row.innerHTML = allitem
 
 let adds = document.querySelectorAll('.add')
+let isFound = (param) => {
+    return cart.findIndex(item => item.id === param)
+}
+
 for (let i = 0; i<menus.length; i++) {
     adds[i].addEventListener('click', () => {
-         idx = (adds[i].id - 1)
-         item = {
-             'id' : menus[idx].id,
-             'qty' : 1,
-             'name' : menus[idx].name,
-             'price' : menus[idx].price,
-             'total' : menus[idx].price * this.qty
-         }
-         cart.push(item)
+        idx = (adds[i].id - 1)
+        if (cart.length === 0) {
+            
+        } else {
+            
+        }
+        // if (!isFound(cart[idx].id)) {
+        //      let qty = 1
+        //      item = {
+        //          'id': menus[idx].id,
+        //          'qty': qty,
+        //          'name': menus[idx].name,
+        //          'price': menus[idx].price,
+        //          'total': Number(menus[idx].price) * qty
+        //      }
+        //      cart.push(item)
+        //  } else {
+        //     let foundIdx = isFound(cart[idx].id)
+        //     cart[foundIdx].qty += 1
+        //     cart[foundIdx].total = cart[foundIdx].price * cart[foundIdx].qty
+        //  }
     })
 }
 
 //tampilkan dalam td
+let btnCart = document.getElementById('btnCart')
+let cartTable = document.getElementById('cart')
+
+btnCart.addEventListener('click', () => {
+    let temp = ``
+    cart.forEach(item => {
+        temp += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>${item.price}</td>
+                <td>${item.total}</td>
+            </tr>
+        `
+    })
+    cartTable.innerHTML = temp
+})
+
+let btnReset = document.getElementById('btnReset')
+btnReset.addEventListener('click', () => {
+    cart = []
+})
+
