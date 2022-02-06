@@ -22,3 +22,9 @@ body {
 .btn-primary {
     background-color: #22D3EE !important;
 }
+
+.qty {
+    width: 10% !important;
+    border-radius: 5px;
+    justify-content: center;
+}
